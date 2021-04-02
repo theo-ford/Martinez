@@ -82,12 +82,12 @@ const Index = ({ data }) => {
     return (
       <div>
         <div onClick={hangleToggle} className='about-button-con'>
-          <img src='icons/burger-black.png'/>
+        
         </div> 
 
         <div className={` about-con ${isActive ? "" : "active"}`}>
           <div onClick={hangleToggle} className="about-exit-button-con">
-            <img src='icons/exit-white.png'/>
+
             <p>{data.prismicAboutPage.data.about_content.text}</p>
           </div>
         </div>
