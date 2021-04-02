@@ -8,7 +8,6 @@ import { useMeasure } from "react-use";
 import { ImageOrientation } from "../components/utils/image-orientation";
 import { useInView } from 'react-intersection-observer';
 import "../components/styles/index.css";
-import "../../public/icons/burger-black.png";
 import { Open } from "../components/icons/menu-toggle.js";
 import Scrollspy from 'react-scrollspy';
 
@@ -82,7 +81,7 @@ const Index = ({ data }) => {
     return (
       <div>
         <div onClick={hangleToggle} className='about-button-con'>
-        
+
         </div> 
 
         <div className={` about-con ${isActive ? "" : "active"}`}>
