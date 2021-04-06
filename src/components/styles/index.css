@@ -109,3 +109,31 @@ ul.alphabet-nav {
   position: fixed;
   z-index:20000000;
 }
+
+/*p {
+  line-height: 0.93;
+  font-family: 'stencil';
+  font-weight: normal;
+  font-size: 8.7vw;
+  font-size:95px;
+  height:auto;
+  width:auto;
+  width: fit-content;
+  display:inline-block;  
+}
+*/
+p.about-text {
+  font-family: helvetica;
+}
+
+.about-text-con {
+  width:100%;
+  float: left;
+}
+
+img.artist-img.portrait {
+  width:26%;
+}
+img.artist-img.landscape {
+  width:39%;
+}

@@ -3,15 +3,15 @@ export const ImageOrientation = (image) => {
   const isImageSquare = image.dimensions.width === image.dimensions.height;
 
   if (isImageLandscape === true) {
-  	console.log("landscape");
+  	// console.log("landscape");
     return "landscape";
   } 
   else if (isImageSquare === true) {
-  	console.log("square");
+  	// console.log("square");
   	return "square"
   }
   else {
-  	console.log("portrait");
+  	// console.log("portrait");
     return "portrait";
   }
 };

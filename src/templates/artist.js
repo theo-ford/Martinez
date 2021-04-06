@@ -1,10 +1,13 @@
 import React from "react";
-import { graphql } from "gatsby";
+import { graphql, Link } from "gatsby";
 import styled from "styled-components";
 import { withPreview } from "gatsby-source-prismic";
 // import { Gallery } from '../components/images/gallery';
-import { GalleryTwo } from '../components/images/galleryTwo';
 
+import { GalleryTwo } from '../components/images/galleryTwo';
+import "react-responsive-carousel/lib/styles/carousel.css"; // requires a loader
+import { Carousel } from 'react-responsive-carousel';
+import "../components/styles/artist.css";
 
 
 
@@ -12,10 +15,7 @@ const PageContainer = styled.div`
 width: 100vw;
 height:100vh;
 `
-const ImgContainer = styled.div`
-  width: 200px;
-  height:auto;
-`
+
 
 // const images = data.prismicArtist.data.gallery.map(
 //   (content, index) => {
@@ -28,45 +28,69 @@ const ImgContainer = styled.div`
 
 
 const GalleryThree = ({ data }) => {
-  console.log(data.prismicArtist.data.gallery);
+   
 
   return (
+    <div>
+    
     <p>hey</p>
+    </div>
   )
 }
 
 const Artist = ({ data }) => {
+  console.log(data.prismicArtist.data.gallery);
   return (
-    <PageContainer>
+
+    <div>
+
+      <div className='exit-artist-button-con'>
+        <Link to={`/`}>
+          <img src='icons/exit-black.png' />
+        </Link>
+      </div>
+
+      <Carousel
+        showIndicators={false}
+        showThumbs={false}
+        infiniteLoop={true}
+        transitionTime={0}
+      >
+          <div>
+              <img className='carousel-img' src="img/9 VOLT.jpg" />
+              <p className="legend">Legend 1</p>
+          </div>
+          <div>
+              <img className='carousel-img' src="img/9 VOLT2.jpg" />
+              <p className="legend">Legend 2</p>
+          </div>
+          <div>
+              <img className='carousel-img' src="img/9VOLT1.jpg" />
+              <p className="legend">Legend 3</p>
+          </div>
+      </Carousel>
+
+      <div className='artist-artist-title-and-counter-con'>
+        <p>TEST</p>
+      </div>
+
       <div
         dangerouslySetInnerHTML={{
           __html: data.prismicArtist.data.artist_title.html,
         }}
       />
-      <div
-        dangerouslySetInnerHTML={{
-          __html: data.prismicArtist.data.artist_location.html,
-        }}
-      />
-        <div
-          className="artist_year"
-          dangerouslySetInnerHTML={{
-            __html: data.prismicArtist.data.artist_year.html,
-          }}
-        /> 
-        <ImgContainer>
-          <img
-                src={data.prismicArtist.data.index_image.fluid.srcWebp}
-                srcSet={data.prismicArtist.data.index_image.fluid.srcSetWebp}
-                // alt={content.index_image.alt}
-                loading="lazy"
-              /> 
-        </ImgContainer>  
-        
-        <GalleryTwo images={data.prismicArtist.data.gallery}/> 
+      <img
+        className='index-image'
+        src={data.prismicArtist.data.index_image.fluid.srcWebp}
+        srcSet={data.prismicArtist.data.index_image.fluid.srcSetWebp}
+        // alt={content.index_image.alt}
+        loading="lazy"
+      />                
+
+      
+    </div>
 
 
-    </PageContainer>
   );
 };
 
@@ -78,12 +102,6 @@ export const query = graphql`
     prismicArtist(uid: { eq: $uid }) {
       data {
         artist_title {
-          html
-        }
-        artist_location {
-          html
-        }
-        artist_year {
           html
         }
         index_image {
@@ -102,12 +120,6 @@ export const query = graphql`
               width
               height
             }
-          }
-          artist_image_location {
-            html
-          }
-          artist_image_year {
-            html
           }
         }        
       }

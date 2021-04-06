@@ -1,0 +1,91 @@
+img.index-image {
+	width:200px;
+}
+
+body {
+	/*background-color: blue;*/
+}
+
+
+/*.carousel {
+	width: 100vw;
+	height: 100vh;
+}
+.slider-wrapper {
+	width: 100vw;
+	height: 100vh;
+}*/
+
+
+
+/*.carousel-img {
+  width: 24% !important;
+  top: 50%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%); 	
+}*/
+
+.carousel .slide {
+	display: flex;
+  justify-content: center;
+  align-items: center;
+	width: 100vw;
+	height: 100vh;
+}  
+
+
+.carousel .slide img {
+	width:24%;
+	/*top:50%;
+	transform: translate(-50%, -50%);
+	position:absolute;*/
+}
+
+.carousel .control-next.control-arrow {
+	background-color: none;
+	width:50%;
+	cursor: url(/icons/forward-arrow-124pxD.png), auto;
+}
+.carousel .control-prev.control-arrow {
+	background-color: none;
+	width:50%;
+	cursor: url(/icons/prev-arrow-124px.png), auto;	
+}
+
+.exit-artist-button-con {
+	position:fixed;
+	top:0;
+	right:0;
+	padding:20px;
+	width:100px;
+	height:100px;
+	/*background-color: blue;*/
+	z-index:400000;
+}
+.carousel.carousel-slider .control-arrow:hover {
+  background: none; 
+}
+.carousel .control-arrow:before, .carousel.carousel-slider .control-arrow:before {
+	border-top: 0px;
+	border-bottom: 0px;
+	border-left: 0px;
+}
+
+.carousel .carousel-status {
+	font-family: 'stencil';
+	color:black;
+	font-size: 16px;
+	position:fixed;
+	bottom:0 !important;
+	text-shadow:none;
+	text-align: center;
+	width: 100%;
+}
+
+.artist-artist-title-and-counter-con {
+	position:fixed;
+	text-align: center;
+	width: 100%;
+	bottom:0;	
+}
