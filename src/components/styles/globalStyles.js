@@ -2,8 +2,23 @@ import React from "react";
 import { createGlobalStyle } from "styled-components";
 
 const GlobalStyle = createGlobalStyle`
+
+html {
+  main{
+    opacity: 0;
+    transition: 250ms opacity ease;
+  }
+}
+
+html.wf-active,
+html.wf-inactive {
+  main{
+    opacity: 1;
+  }
+}
+
 body {
-  font-family: "Helvetica Neue", "Lucida Grande", sans-serif;
+  font-family: "Stencil", "Helvetica Neue", "Lucida Grande", sans-serif;
   font-weight: normal;
   font-style: normal;
 
@@ -193,7 +208,7 @@ div {
 //   }
 
 
-// - - - - - - - - - - - TF STYLES 
+// - - - - - - - - - - - TF STYLES
 // .artist_title h1 {
 //   font-size:200px;
 //   line-height:1;

@@ -27,14 +27,15 @@ module.exports = {
   plugins: [
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-styled-components`,
-    // {
-    //   resolve: "gatsby-plugin-web-font-loader",
-    //   options: {
-    //     google: {
-    //       families: ["Droid Sans", "Droid Serif"],
-    //     },
-    //   },
-    // },
+    {
+      resolve: "gatsby-plugin-web-font-loader",
+      options: {
+        custom: {
+          families: ["Stencil"],
+          urls: ["/fonts/fonts.css"],
+        },
+      },
+    },
     // {
     //   resolve: `gatsby-plugin-manifest`,
     //   options: {
@@ -52,7 +53,7 @@ module.exports = {
       options: {
         repositoryName: `Martinez-2`,
         accessToken: `${process.env.API_KEY}`,
-        linkResolver: ({ node, key, value }) => (post) => `/${post.uid}`,
+        linkResolver: ({ node, key, value }) => post => `/${post.uid}`,
         schemas: {
           artist: require("./src/schemas/artist.json"),
           about_page: require("./src/schemas/about_page.json"),
