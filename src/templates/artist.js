@@ -50,17 +50,18 @@ const Artist = ({ data }) => {
   };
 
   // console.log(data.prismicArtist.data.gallery);
+    const artistGallery = data.prismicArtist.data.gallery.filter(artist => artist.artist_image.fluid !== null)
+      .map((artist, index) => (
+      <img
+        key={`artist_image_${index}`}
+        className="index-image"
+        src={artist.artist_image.fluid.srcWebp}
+        srcSet={artist.artist_image.fluid.srcSetWebp}
+        // alt={content.index_image.alt}
+        loading="lazy"
+      />
+    ));    
 
-  const artistGallery = data.prismicArtist.data.gallery.map((artist, index) => (
-    <img
-      key={`artist_image_${index}`}
-      className="index-image"
-      src={artist.artist_image.fluid.srcWebp}
-      srcSet={artist.artist_image.fluid.srcSetWebp}
-      // alt={content.index_image.alt}
-      loading="lazy"
-    />
-  ));
 
   return (
     <div>
