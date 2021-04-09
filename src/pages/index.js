@@ -30,6 +30,7 @@ const Index = ({ data }) => {
           <div className="about-text-con">
             <p className="about-text">
               {data.prismicAboutPage.data.about_content.text}
+              It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).
             </p>
           </div>
         </div>
@@ -40,46 +41,87 @@ const Index = ({ data }) => {
   const AlphabetNav = () => {
     return (
       <ul className="alphabet-nav">
-        <li
-          onClick={() =>
+        <li onClick={() =>
             document.querySelector("#group-A").scrollIntoView({
-              behavior: "smooth",
-              block: "start",
-            })
-          }
-        >
-          A
-        </li>
-        <li
-          onClick={() =>
+              behavior: "smooth", block: "start",})}>A</li>
+        <li onClick={() =>
             document.querySelector("#group-B").scrollIntoView({
-              behavior: "smooth",
-              block: "start",
-            })
-          }
-        >
-          B
-        </li>
-        <li
-          onClick={() =>
+              behavior: "smooth", block: "start",})}>B</li>
+        <li onClick={() =>
             document.querySelector("#group-C").scrollIntoView({
-              behavior: "smooth",
-              block: "start",
-            })
-          }
-        >
-          C
-        </li>
-        <li
-          onClick={() =>
+              behavior: "smooth", block: "start",})}>C</li>
+        <li onClick={() =>
+            document.querySelector("#group-D").scrollIntoView({
+              behavior: "smooth", block: "start",})}>D</li>
+        <li onClick={() =>
+            document.querySelector("#group-E").scrollIntoView({
+              behavior: "smooth", block: "start",})}>E</li>
+        <li onClick={() =>
+            document.querySelector("#group-E").scrollIntoView({
+              behavior: "smooth", block: "start",})}>E</li>
+        <li onClick={() =>
+            document.querySelector("#group-F").scrollIntoView({
+              behavior: "smooth", block: "start",})}>F</li>
+        <li onClick={() =>
+            document.querySelector("#group-G").scrollIntoView({
+              behavior: "smooth", block: "start",})}>G</li>
+        <li onClick={() =>
+            document.querySelector("#group-H").scrollIntoView({
+              behavior: "smooth", block: "start",})}>H</li>
+        <li onClick={() =>
+            document.querySelector("#group-I").scrollIntoView({
+              behavior: "smooth", block: "start",})}>I</li>
+        <li onClick={() =>
+            document.querySelector("#group-J").scrollIntoView({
+              behavior: "smooth", block: "start",})}>J</li>
+        <li onClick={() =>
+            document.querySelector("#group-K").scrollIntoView({
+              behavior: "smooth", block: "start",})}>K</li>
+        <li onClick={() =>
+            document.querySelector("#group-L").scrollIntoView({
+              behavior: "smooth", block: "start",})}>L</li>
+        <li onClick={() =>
+            document.querySelector("#group-M").scrollIntoView({
+              behavior: "smooth", block: "start",})}>M</li>
+        <li onClick={() =>
+            document.querySelector("#group-N").scrollIntoView({
+              behavior: "smooth", block: "start",})}>N</li>
+        <li onClick={() =>
+            document.querySelector("#group-O").scrollIntoView({
+              behavior: "smooth", block: "start",})}>O</li>
+        <li onClick={() =>
+            document.querySelector("#group-P").scrollIntoView({
+              behavior: "smooth", block: "start",})}>P</li>
+        <li onClick={() =>
+            document.querySelector("#group-Q").scrollIntoView({
+              behavior: "smooth", block: "start",})}>Q</li>
+        <li onClick={() =>
+            document.querySelector("#group-R").scrollIntoView({
+              behavior: "smooth", block: "start",})}>R</li>
+        <li onClick={() =>
+            document.querySelector("#group-S").scrollIntoView({
+              behavior: "smooth", block: "start",})}>S</li>                                                                                                                                                                                                                              
+        <li onClick={() =>
+            document.querySelector("#group-U").scrollIntoView({
+              behavior: "smooth", block: "start",})}>U</li>
+        <li onClick={() =>
+            document.querySelector("#group-V").scrollIntoView({
+              behavior: "smooth", block: "start",})}>V</li>
+        <li onClick={() =>
+            document.querySelector("#group-W").scrollIntoView({
+              behavior: "smooth", block: "start",})}>W</li>
+        <li onClick={() =>
+            document.querySelector("#group-X").scrollIntoView({
+              behavior: "smooth", block: "start",})}>X</li>
+        <li onClick={() =>
+            document.querySelector("#group-Y").scrollIntoView({
+              behavior: "smooth", block: "start",})}>Y</li>
+        <li onClick={() =>
+            document.querySelector("#group-Z").scrollIntoView({
+              behavior: "smooth", block: "start",})}>Z</li>                                                                  
+        <li onClick={() =>
             document.querySelector("#group-1").scrollIntoView({
-              behavior: "smooth",
-              block: "start",
-            })
-          }
-        >
-          0-9
-        </li>
+              behavior: "smooth", block: "start",})}>0-9</li>
       </ul>
     );
   };
@@ -132,15 +174,21 @@ const Index = ({ data }) => {
     (content, index) => content.node.data.artist_title.text
   );
   const scrollSpyArtistsListLi = arrayFour.map((content, index) => {
+    function click() {
+      console.log('test');
+    }
+
     return (
+
       <li key={index} className={content.node.data.artist_title.text}>
-        <p className="artist-title">{content.node.data.artist_title.text}</p>
-        <img
-          className={`artist-img ${ImageOrientation(
-            content.node.data.index_image
-          )}`}
-          src={content.node.data.index_image.fluid.srcWebp}
-        />
+        <p className="artist-title">{content.node.data.artist_title.text}</p>        
+          <img
+            onClick={click()}
+            className={`index-artist-img ${ImageOrientation(
+              content.node.data.index_image
+            )}`}
+            src={content.node.data.index_image.fluid.srcWebp}
+          />        
       </li>
     );
   });
@@ -190,6 +238,18 @@ const Index = ({ data }) => {
     );
   });
 
+
+  // const ArtistListCon = ({index, data, content}) => {
+  //   return (
+      
+  //   )
+  // }
+
+   const scrollElementParent = document.getElementsByClassName('.artist-list-con');
+  // const scrollElementParent = document.querySelector('.artist-list-con');
+  // const scrollElement = scrollElementParent.children;
+  console.log(scrollElementParent);
+
   return (
     <div>
       <About />
@@ -199,6 +259,7 @@ const Index = ({ data }) => {
         <Scrollspy
           items={scrollSpyArtistsItemsArray}
           currentClassName="is-current"
+          
         >
           {scrollSpyArtistsListLi}
         </Scrollspy>
@@ -206,7 +267,10 @@ const Index = ({ data }) => {
 
       <div className="artist-list-con">
         <div className="artist-list">{alphabet}</div>
-      </div>
+      </div>  
+
+      
+
     </div>
   );
 };
