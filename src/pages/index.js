@@ -174,10 +174,6 @@ const Index = ({ data }) => {
     (content, index) => content.node.data.artist_title.text
   );
   const scrollSpyArtistsListLi = arrayFour.map((content, index) => {
-    function click() {
-      console.log('test');
-    }
-
     return (
 
       <li key={index} className={content.node.data.artist_title.text}>
@@ -245,10 +241,10 @@ const Index = ({ data }) => {
   //   )
   // }
 
-   const scrollElementParent = document.getElementsByClassName('.artist-list-con');
+   // const scrollElementParent = document.getElementsByClassName('.artist-list-con');
   // const scrollElementParent = document.querySelector('.artist-list-con');
   // const scrollElement = scrollElementParent.children;
-  console.log(scrollElementParent);
+  // console.log(scrollElementParent);
 
   return (
     <div>
