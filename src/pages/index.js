@@ -178,8 +178,7 @@ const Index = ({ data }) => {
 
       <li key={index} className={content.node.data.artist_title.text}>
         <p className="artist-title">{content.node.data.artist_title.text}</p>        
-          <img
-            onClick={click()}
+          <img            
             className={`index-artist-img ${ImageOrientation(
               content.node.data.index_image
             )}`}
