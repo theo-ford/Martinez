@@ -257,7 +257,7 @@ const Index = ({ data }) => {
         <div key={index}>
           <a 
             href={content.node.uid}
-            onClick={handleClick}
+            // onClick={handleClick}
           >
             <h1
               className="artist-title"
