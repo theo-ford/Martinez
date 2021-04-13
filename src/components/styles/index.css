@@ -20,7 +20,7 @@
 
 h1.artist-title {
   line-height: 0.93;
-  font-family: 'stencil', helvetica;
+  font-family: 'Stencil', helvetica;
   font-weight: normal;
   font-size: 8.7vw;
 
@@ -155,7 +155,6 @@ ul.alphabet-nav li {
 }
 
 p.about-text {
-  font-family: helvetica;
   color:white;
   /*text-align:center;*/
   line-height: 1.1;
