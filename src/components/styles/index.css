@@ -31,6 +31,11 @@ h1.artist-title {
   display:inline-block;
 }
 
+@media (max-width: 480px) {
+  h1.artist-title {
+    font-size:75px;
+  }
+}
 
 
 
