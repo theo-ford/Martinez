@@ -32,7 +32,8 @@ module.exports = {
       options: {
         custom: {
           families: ["Stencil", "Helvetica Neue LT Pro"],
-          urls: ["/fonts.css"],
+          // urls: ["fonts.css"],
+          urls: ["./fonts/fonts.css"],
         },
       },
     },
