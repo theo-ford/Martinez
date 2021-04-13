@@ -7,6 +7,7 @@ import { withPreview } from "gatsby-source-prismic";
 import { GalleryTwo } from "../components/images/galleryTwo";
 import "react-responsive-carousel/lib/styles/carousel.css"; // requires a loader
 import { Carousel } from "react-responsive-carousel";
+import { ImageOrientation } from "../components/utils/image-orientation";
 import "../components/styles/artist.css";
 import exitBlack from "../../public/icons/exit-black.png";
 
@@ -15,24 +16,12 @@ const PageContainer = styled.div`
   height: 100vh;
 `;
 
-// const images = data.prismicArtist.data.gallery.map(
-//   (content, index) => {
-//     console.log(content);
-//     return (
-//       <p> hello </p>
-//     );
-//   }
-// );
 
-const GalleryThree = ({ data }) => {
-  return (
-    <div>
-      <p>hey</p>
-    </div>
-  );
-};
 
 const Artist = ({ data }) => {
+  // index image
+  // src={data.prismicArtist.data.index_image.fluid.srcWebp}
+  // srcSet={data.prismicArtist.data.index_image.fluid.srcSetWebp}  
   const [currentSlide, setCurrentSlide] = useState(0);
   const [totalSlides, setTotalSlides] = useState(null);
 
@@ -55,7 +44,9 @@ const Artist = ({ data }) => {
       .map((artist, index) => (
       <img
         key={`artist_image_${index}`}
-        className="index-image"
+        className={`artist-artist-img ${ImageOrientation(
+                artist.artist_image
+              )}`}
         src={artist.artist_image.fluid.srcWebp}
         srcSet={artist.artist_image.fluid.srcSetWebp}
         // alt={content.index_image.alt}
@@ -77,6 +68,7 @@ const Artist = ({ data }) => {
         showThumbs={false}
         infiniteLoop={true}
         transitionTime={0}
+        showStatus={false}
         onChange={index => updateCurrentSlide(index)}
       >
         {artistGallery}
@@ -96,25 +88,12 @@ const Artist = ({ data }) => {
 
       <div className="artist-artist-title-and-counter-con">
         <p>
-          TEST{" "}
-          <span>
-            {currentSlide + 1}/{totalSlides}
+          {data.prismicArtist.data.artist_title.text} {" "}
+          <span className='counter'>
+            ({currentSlide + 1}/{totalSlides})
           </span>
         </p>
-      </div>
-
-      <div
-        dangerouslySetInnerHTML={{
-          __html: data.prismicArtist.data.artist_title.html,
-        }}
-      />
-      <img
-        className="index-image"
-        src={data.prismicArtist.data.index_image.fluid.srcWebp}
-        srcSet={data.prismicArtist.data.index_image.fluid.srcSetWebp}
-        // alt={content.index_image.alt}
-        loading="lazy"
-      />
+      </div>     
     </div>
   );
 };
@@ -127,6 +106,7 @@ export const query = graphql`
       data {
         artist_title {
           html
+          text
         }
         index_image {
           fluid {
