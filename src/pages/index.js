@@ -228,7 +228,7 @@ const Index = ({ data }) => {
   });
 
 
-  const scrollable = document.querySelector('.artist-list-con');
+
   return (
     <div>
       <About />
