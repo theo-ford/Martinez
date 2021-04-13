@@ -52,18 +52,21 @@ li.is-current img{
 li p {
   display: none;
 }
-img.index-artist-img {
+li a {
   width: 24%;
   position: absolute;
   top: 40%;
   left: 50%;
   -ms-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%);   
+  transform: translate(-50%, -50%);  
 }
-img.index-artist-img.portrait {
+a.index-artist-img {
+   
+}
+a.index-artist-img.portrait {
   width:26%;
 }
-img.index-artist-img.landscape {
+a.index-artist-img.landscape {
   width:39%;
 }
 
@@ -91,6 +94,15 @@ ul.alphabet-nav li {
 }
 
 /* - - - - - - about - - - - - */
+/*.about-con {
+  background-color: black;
+  width:100%;
+  height:100vh;
+  z-index: 5000;
+  transform: translateY(100%);
+  transition: transform 0.35s ease; 
+  position: absolute;
+}*/
 .about-con {
   background-color: black;
   width:100%;
@@ -98,16 +110,12 @@ ul.alphabet-nav li {
   z-index: 5000;
   transform: translateY(100%);
   transition: transform 0.35s ease; 
-  /*overflow: hidden;*/
-  position: absolute;
-  /*visibility:hidden;*/
- /* display:none;*/
-
+  position: fixed;
+  top:0;
+  overflow:scroll;
 }
 .about-con.active {
-  transform: translateY(-0%);
-  /*visibility: visible;*/
-  /*display:block;*/
+  transform: translateY(0%);
 }
 
 .about-button-con {
@@ -128,6 +136,14 @@ ul.alphabet-nav li {
   right:0;
   padding: 22px;
 }
+/*.about-exit-button-con {
+  width: 113px;
+  position: fixed;
+  float: right;
+  top: 0;
+  right:0;
+  padding: 22px;
+}*/
 .about-text-con {
   width:calc(80%);
   float: left;

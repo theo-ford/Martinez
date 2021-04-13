@@ -8,8 +8,11 @@ import { useMeasure } from "react-use";
 import { ImageOrientation } from "../components/utils/image-orientation";
 import { useInView } from "react-intersection-observer";
 import "../components/styles/index.css";
-import { Open } from "../components/icons/menu-toggle.js";
 import Scrollspy from "react-scrollspy";
+import { SingleArtist } from "../components/artists/single-artist";
+import burgerBlack from "../../public/icons/burger-black.png";
+import exitBlack from "../../public/icons/exit-black.png";
+import exitWhite from "../../public/icons/exit-white.png";
 
 const Index = ({ data }) => {
   const About = () => {
@@ -20,17 +23,17 @@ const Index = ({ data }) => {
     return (
       <div>
         <div onClick={hangleToggle} className="about-button-con">
-          <img src="icons/burger-black.png" />
+          <img src={burgerBlack} />
         </div>
 
         <div className={` about-con ${isActive ? "" : "active"}`}>
           <div onClick={hangleToggle} className="about-exit-button-con">
-            <img src="icons/exit-white.png" />
+            <img src={exitWhite} />
           </div>
           <div className="about-text-con">
             <p className="about-text">
               {data.prismicAboutPage.data.about_content.text}
-              It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).
+              
             </p>
           </div>
         </div>
@@ -126,10 +129,6 @@ const Index = ({ data }) => {
     );
   };
 
-  // const array = ['10 FOOT', '45 RPM', '9 VOLT', '910D0', 'AGUA', 'BEAST', 'KEN 5', 'NEMCO'];
-  // const arrayTwo = data.allPrismicArtist.edges.map((content, index) => {
-  //   return content.node.data.artist_title.text;
-  // });
 
   const arrayThree = Object.values(data.allPrismicArtist.edges);
 
@@ -178,26 +177,21 @@ const Index = ({ data }) => {
 
       <li key={index} className={content.node.data.artist_title.text}>
         <p className="artist-title">{content.node.data.artist_title.text}</p>        
-          <img            
-            className={`index-artist-img ${ImageOrientation(
-              content.node.data.index_image
-            )}`}
-            src={content.node.data.index_image.fluid.srcWebp}
-          />        
+          <Link to={content.node.uid}
+              className={`index-artist-img ${ImageOrientation(
+                content.node.data.index_image
+              )}`}
+            >
+            <img            
+              
+              src={content.node.data.index_image.fluid.srcWebp}
+            />    
+          </Link>    
       </li>
     );
   });
 
-  const SingleArtist = ({ index, data, content }) => {
-    return (
-      <a className="artist-link" href={content.node.uid}>
-        <h1 className="artist-title" id={content.node.data.artist_title.text}>
-          {content.node.data.artist_title.text}
-        </h1>
-        <br />
-      </a>
-    );
-  };
+
 
   const artistList = data.allPrismicArtist.edges.map((content, index) => {
     return (
@@ -234,17 +228,7 @@ const Index = ({ data }) => {
   });
 
 
-  // const ArtistListCon = ({index, data, content}) => {
-  //   return (
-      
-  //   )
-  // }
-
-   // const scrollElementParent = document.getElementsByClassName('.artist-list-con');
-  // const scrollElementParent = document.querySelector('.artist-list-con');
-  // const scrollElement = scrollElementParent.children;
-  // console.log(scrollElementParent);
-
+  const scrollable = document.querySelector('.artist-list-con');
   return (
     <div>
       <About />
@@ -254,7 +238,7 @@ const Index = ({ data }) => {
         <Scrollspy
           items={scrollSpyArtistsItemsArray}
           currentClassName="is-current"
-          
+          // rootEl={'.artist-list-con'}
         >
           {scrollSpyArtistsListLi}
         </Scrollspy>

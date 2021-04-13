@@ -8,6 +8,7 @@ import { GalleryTwo } from "../components/images/galleryTwo";
 import "react-responsive-carousel/lib/styles/carousel.css"; // requires a loader
 import { Carousel } from "react-responsive-carousel";
 import "../components/styles/artist.css";
+import exitBlack from "../../public/icons/exit-black.png";
 
 const PageContainer = styled.div`
   width: 100vw;
@@ -67,7 +68,7 @@ const Artist = ({ data }) => {
     <div>
       <div className="exit-artist-button-con">
         <Link to={`/`}>
-          <img src="icons/exit-black.png" />
+          <img src={exitBlack} />
         </Link>
       </div>
 
