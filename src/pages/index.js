@@ -17,23 +17,23 @@ import exitWhite from "../../public/icons/exit-white.png";
 const Index = ({ data }) => {
 
   // const [scrollPosition, setScrollPosition] = React.useState(window.localStorage.getItem('LSScrollPosition') || 0)
-  const [scrollPosition, setScrollPosition] = React.useState(0)
+  // const [scrollPosition, setScrollPosition] = React.useState(0)
 
-  const handleClick = e => {
-    // e.preventDefault();
-    console.log('hello');
-    setScrollPosition(window.pageYOffset);      
-    // console.log(scrollPosition);
-    // assignScrollToLS();               
-  } 
+  // const handleClick = e => {
+  //   // e.preventDefault();
+  //   console.log('hello');
+  //   setScrollPosition(window.pageYOffset);      
+  //   // console.log(scrollPosition);
+  //   // assignScrollToLS();               
+  // } 
 
-  window.localStorage.setItem('LSScrollPosition', scrollPosition);
+  // window.localStorage.setItem('LSScrollPosition', scrollPosition);
        
-  React.useEffect(() => {
-    const scrollPositionFromLS = window.localStorage.getItem('LSScrollPosition')
-    console.log(scrollPositionFromLS)
-    window.scrollTo(0, parseInt(scrollPositionFromLS))
-  })
+  // React.useEffect(() => {
+  //   const scrollPositionFromLS = window.localStorage.getItem('LSScrollPosition')
+  //   console.log(scrollPositionFromLS)
+  //   window.scrollTo(0, parseInt(scrollPositionFromLS))
+  // })
 
 
 
