@@ -1,71 +1,60 @@
 @font-face {
     font-family: "Stencil";
-    src: url("Stencil-Regular.eot");
-    src: url("Stencil-Regular.eot?#iefix") format("embedded-opentype"),
-        url("Stencil-Regular.woff2") format("woff2"),
-        url("Stencil-Regular.woff") format("woff"),
-        url("Stencil-Regular.ttf") format("truetype"),
-        url("Stencil-Regular.svg#Stencil-Regular") format("svg");
+    src: url("fonts/Stencil-Regular.eot");
+    src: url("fonts/Stencil-Regular.eot?#iefix") format("embedded-opentype"),
+        url("fonts/Stencil-Regular.woff2") format("woff2"),
+        url("fonts/Stencil-Regular.woff") format("woff"),
+        url("fonts/Stencil-Regular.ttf") format("truetype"),
+        url("fonts/Stencil-Regular.svg#Stencil-Regular") format("svg");
     font-weight: normal;
     font-style: normal;
 }
 
 @font-face {
     font-family: 'Helvetica Neue';
-    src: url('HelveticaNeue.eot');
-    src: url('HelveticaNeue.eot?#iefix') format('embedded-opentype'),
-        url('HelveticaNeue.woff2') format('woff2'),
-        url('HelveticaNeue.woff') format('woff'),
-        url('HelveticaNeue.ttf') format('truetype'),
-        url('HelveticaNeue.svg#HelveticaNeue') format('svg');
+    src: url('fonts/HelveticaNeue.eot');
+    src: url('fonts/HelveticaNeue.eot?#iefix') format('embedded-opentype'),
+        url('fonts/HelveticaNeue.woff2') format('woff2'),
+        url('fonts/HelveticaNeue.woff') format('woff'),
+        url('fonts/HelveticaNeue.ttf') format('truetype'),
+        url('fonts/HelveticaNeue.svg#HelveticaNeue') format('svg');
     font-weight: normal;
     font-style: normal;
 }
 
 @font-face {
     font-family: 'HelveticaNeue';
-    src: url('HelveticaNeueBold.eot');
-    src: url('HelveticaNeueBold.eot?#iefix') format('embedded-opentype'),
-        url('HelveticaNeueBold.woff2') format('woff2'),
-        url('HelveticaNeueBold.woff') format('woff'),
-        url('HelveticaNeueBold.ttf') format('truetype'),
-        url('HelveticaNeueBold.svg#HelveticaNeueBold') format('svg');
+    src: url('fonts/HelveticaNeueBold.eot');
+    src: url('fonts/HelveticaNeueBold.eot?#iefix') format('embedded-opentype'),
+        url('fonts/HelveticaNeueBold.woff2') format('woff2'),
+        url('fonts/HelveticaNeueBold.woff') format('woff'),
+        url('fonts/HelveticaNeueBold.ttf') format('truetype'),
+        url('fonts/HelveticaNeueBold.svg#HelveticaNeueBold') format('svg');
     font-weight: bold;
     font-style: normal;
 }
 
 @font-face {
     font-family: 'HelveticaNeue';
-    src: url('HelveticaNeueMedium.eot');
-    src: url('HelveticaNeueMedium.eot?#iefix') format('embedded-opentype'),
-        url('HelveticaNeueMedium.woff2') format('woff2'),
-        url('HelveticaNeueMedium.woff') format('woff'),
-        url('HelveticaNeueMedium.ttf') format('truetype'),
-        url('HelveticaNeueMedium.svg#HelveticaNeueMedium') format('svg');
+    src: url('fonts/HelveticaNeueMedium.eot');
+    src: url('fonts/HelveticaNeueMedium.eot?#iefix') format('embedded-opentype'),
+        url('fonts/HelveticaNeueMedium.woff2') format('woff2'),
+        url('fonts/HelveticaNeueMedium.woff') format('woff'),
+        url('fonts/HelveticaNeueMedium.ttf') format('truetype'),
+        url('fonts/HelveticaNeueMedium.svg#HelveticaNeueMedium') format('svg');
     font-weight: 500;
     font-style: normal;
 }
 
 @font-face {
     font-family: 'HelveticaNeue';
-    src: url('HelveticaNeueItalic.eot');
-    src: url('HelveticaNeueItalic.eot?#iefix') format('embedded-opentype'),
-        url('HelveticaNeueItalic.woff2') format('woff2'),
-        url('HelveticaNeueItalic.woff') format('woff'),
-        url('HelveticaNeueItalic.ttf') format('truetype'),
-        url('HelveticaNeueItalic.svg#HelveticaNeueItalic') format('svg');
+    src: url('fonts/HelveticaNeueItalic.eot');
+    src: url('fonts/HelveticaNeueItalic.eot?#iefix') format('embedded-opentype'),
+        url('fonts/HelveticaNeueItalic.woff2') format('woff2'),
+        url('fonts/HelveticaNeueItalic.woff') format('woff'),
+        url('fonts/HelveticaNeueItalic.ttf') format('truetype'),
+        url('fonts/HelveticaNeueItalic.svg#HelveticaNeueItalic') format('svg');
     font-weight: 100;
     font-style: italic;
 }
 
-@font-face {
-    font-family: 'Stencil';
-    src: url('fonts/Stencil-Regular.eot');
-    src: url('fonts/Stencil-Regular.eot?#iefix') format('embedded-opentype'),
-        url('fonts/Stencil-Regular.woff2') format('woff2'),
-        url('fonts/Stencil-Regular.woff') format('woff'),
-        url('fonts/Stencil-Regular.ttf') format('truetype'),
-        url('fonts/Stencil-Regular.svg#Stencil-Regular') format('svg');
-    font-weight: normal;
-    font-style: normal;
-}
