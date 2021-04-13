@@ -9,12 +9,36 @@ import { ImageOrientation } from "../components/utils/image-orientation";
 import { useInView } from "react-intersection-observer";
 import "../components/styles/index.css";
 import Scrollspy from "react-scrollspy";
-import { SingleArtist } from "../components/artists/single-artist";
+// import { SingleArtist } from "../components/artists/single-artist";
 import burgerBlack from "../../public/icons/burger-black.png";
 import exitBlack from "../../public/icons/exit-black.png";
 import exitWhite from "../../public/icons/exit-white.png";
 
 const Index = ({ data }) => {
+
+  // const [scrollPosition, setScrollPosition] = React.useState(window.localStorage.getItem('LSScrollPosition') || 0)
+  const [scrollPosition, setScrollPosition] = React.useState(0)
+
+  const handleClick = e => {
+    // e.preventDefault();
+    console.log('hello');
+    setScrollPosition(window.pageYOffset);      
+    // console.log(scrollPosition);
+    // assignScrollToLS();               
+  } 
+
+  window.localStorage.setItem('LSScrollPosition', scrollPosition);
+       
+  React.useEffect(() => {
+    const scrollPositionFromLS = window.localStorage.getItem('LSScrollPosition')
+    console.log(scrollPositionFromLS)
+    window.scrollTo(0, parseInt(scrollPositionFromLS))
+  })
+
+
+
+
+
   const About = () => {
     const [isActive, setActive] = useState("false");
     const hangleToggle = () => {
@@ -177,10 +201,11 @@ const Index = ({ data }) => {
 
       <li key={index} className={content.node.data.artist_title.text}>
         <p className="artist-title">{content.node.data.artist_title.text}</p>        
-          <Link to={content.node.uid}
-              className={`index-artist-img ${ImageOrientation(
-                content.node.data.index_image
-              )}`}
+          <Link 
+            to={content.node.uid}
+            className={`index-artist-img ${ImageOrientation(
+              content.node.data.index_image
+            )}`}            
             >
             <img            
               
@@ -191,6 +216,20 @@ const Index = ({ data }) => {
     );
   });
 
+
+  const SingleArtist = ({ index, data, content }) => {
+    return (
+      <a 
+        className="artist-link" 
+        href={content.node.uid}         
+      >
+        <h1 className="artist-title" id={content.node.data.artist_title.text}>
+          {content.node.data.artist_title.text}
+        </h1>
+        <br />
+      </a>
+    );
+  };
 
 
   const artistList = data.allPrismicArtist.edges.map((content, index) => {
@@ -204,11 +243,22 @@ const Index = ({ data }) => {
     );
   });
 
+
+
+
+
+
+
+
+
   const alphabet = finalResult.map((content, index) => {
     const alphabetChildren = content.children.map((content, index) => {
       return (
         <div key={index}>
-          <a href={content.node.uid}>
+          <a 
+            href={content.node.uid}
+            onClick={handleClick}
+          >
             <h1
               className="artist-title"
               id={content.node.data.artist_title.text}
