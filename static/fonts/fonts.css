@@ -8,6 +8,7 @@
         url("/fonts/Stencil-Regular.svg#Stencil-Regular") format("svg");
     font-weight: normal;
     font-style: normal;
+    font-display: block;
 }
 
 @font-face {
@@ -20,6 +21,7 @@
         url('/fonts/HelveticaNeueLTPro-Roman.svg#HelveticaNeue') format('svg');
     font-weight: normal;
     font-style: normal;
+    font-display: block;
 }
 
 
